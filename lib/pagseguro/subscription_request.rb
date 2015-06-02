@@ -85,7 +85,15 @@ module PagSeguro
         email: email,
         token: token
       })
-      Response.new Request.post("pre-approvals/request", api_version, params)
+      Response.new Request.post("pre-approvals/request/#{self.code}", api_version, params)
+    end
+
+    def cancel(code)
+      params = Serializer.new(self).to_params.merge({
+        email: email,
+        token: token
+      })
+      Response.new Request.get("pre-approvals/cancel/#{code}", api_version, params)
     end
 
     private
