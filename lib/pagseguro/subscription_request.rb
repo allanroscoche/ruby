@@ -85,7 +85,7 @@ module PagSeguro
         email: email,
         token: token
       })
-      Response.new Request.post("pre-approvals/request/#{self.code}", api_version, params)
+      Response.new Request.post("pre-approvals/request", api_version, params)
     end
 
     def cancel(code)
