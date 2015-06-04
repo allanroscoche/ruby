@@ -88,14 +88,6 @@ module PagSeguro
       Response.new Request.post("pre-approvals/request", api_version, params)
     end
 
-    def getCode(notificationCode)
-      params = Serializer.new(self).to_params.merge({
-        email: email,
-        token: token
-      })
-      Response.new Request.post("pre-approvals/notifications/#{notificationCode}", api_version, params)
-    end
-
     def cancel(code)
       params = Serializer.new(self).to_params.merge({
         email: email,
