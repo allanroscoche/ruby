@@ -68,8 +68,8 @@ module PagSeguro
   end
 
   self.encoding = "UTF-8"
-  #self.environment = :production
-  self.environment = :sandbox
+  self.environment = :production
+  #self.environment = :sandbox
 
   # Register endpoints by environment.
   def self.uris
